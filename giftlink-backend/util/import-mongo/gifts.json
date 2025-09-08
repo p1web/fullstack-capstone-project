@@ -1,0 +1,6 @@
+{
+  "docs": [
+    { "id": 1, "name": "Toy Car", "category": "Toys", "condition": "New", "age_years": 5 },
+    { "id": 2, "name": "Story Book", "category": "Books", "condition": "Used", "age_years": 8 }
+  ]
+}
