@@ -1,6 +1,22 @@
 {
-  "docs": [
-    { "id": 1, "name": "Toy Car", "category": "Toys", "condition": "New", "age_years": 5 },
-    { "id": 2, "name": "Story Book", "category": "Books", "condition": "Used", "age_years": 8 }
-  ]
-}
+    "docs": [
+      { 
+        "id": 1, 
+        "name": "Bed Frame", 
+        "category": "Furniture", 
+        "condition": "New", 
+        "age_years": 5,
+        "image": "/images/bed-frame.jpeg",
+        "date_added": 1756468800
+      },
+      { 
+        "id": 2, 
+        "name": "Book Shelf", 
+        "category": "Furniture", 
+        "condition": "Used", 
+        "age_years": 8,
+        "image": "/images/bookshelf1.jpeg",
+        "date_added": 1756468800
+      }
+    ]
+  }
