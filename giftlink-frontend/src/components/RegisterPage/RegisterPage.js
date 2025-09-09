@@ -21,23 +21,21 @@ function RegisterPage() {
                     <div className="col-md-6 col-lg-4">
                         <div className="register-card p-4 border rounded">
                             <h2 className="text-center mb-4 font-weight-bold">Register</h2>
-
-                    {/* insert code here to create input elements for all the variables - firstName, lastName, email, password */}
                     <div className="mb-4">
-                        <label htmlFor="firstName" className="form label"> FirstName</label><br>
+                        <label htmlFor="firstName" className="form label"> FirstName</label>
                         <input id="firstName" type="text" className="form-control" placeholder="Enter your first name" value={firstName} onChange={(e) => setFirstName(e.target.value)} />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="lastName" className="form label"> lastName</label><br>
+                        <label htmlFor="lastName" className="form label"> lastName</label>
                         <input id="lastName" type="text" className="form-control" placeholder="Enter your last name" value={lastName} onChange={(e) => setFirstName(e.target.value)} />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="Email" className="form label"> Email</label><br>
+                        <label htmlFor="Email" className="form label"> Email</label>
                         <input id="Email" type="text" className="form-control" placeholder="Enter your email" value={email} onChange={(e) => setFirstName(e.target.value)} />
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="Password" className="form label"> Password</label><br>
-                        <input id="Password" type="text" className="form-control" placeholder="Enter your password" value={password} onChange={(e) => setFirstName(e.target.value)} />
+                        <label htmlFor="Password" className="form label"> Password</label>
+                        <input id="Password" type="password" className="form-control" placeholder="Enter your password" value={password} onChange={(e) => setFirstName(e.target.value)} />
                     </div>
 
                     {/* insert code here to create a button that performs the `handleRegister` function on click */}
