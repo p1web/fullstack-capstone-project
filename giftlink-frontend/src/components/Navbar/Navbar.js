@@ -1,8 +1,13 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import {urlConfig} from '../../config';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useAppContext } from '../../context/AuthContext';
 
 export default function Navbar() {
+    const { isLoggedIn, setIsLoggedIn, userName, setUserName } = useAppContext();
+    const navigate = useNavigate();
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="/">GiftLink</a>
