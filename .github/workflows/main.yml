@@ -13,26 +13,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Setup Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          node-version: 14
 
       - name: Install JSHint
-        run: npm install jshint --global
+        run: npm install -g jshint
 
       - name: Run Linter
         run: |
-          jshint ./giftlink-backend/**/*.js
-          echo "Linted all the JS files successfully"
+          echo "Using .jshintrc config"
+          jshint --config .jshintrc "./giftlink-backend/**/*.js"
+          echo "Linted all JS files successfully"
 
   client_build:
     name: Build client
@@ -40,27 +33,13 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-
-      - name: Setup Node.js
+      - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
-
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
-      - name: Install dependencies
-        run: |
-          cd giftlink-frontend
-          npm ci
-
+          node-version: 14
       - name: Run build
         run: |
           cd giftlink-frontend
+          npm install
           npm run build
           echo "Client-side build successfully"
