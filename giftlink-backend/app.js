@@ -46,7 +46,7 @@ app.use('/api/auth', authRoutes);
 // Global Error Handler
 app.use((err, req, res, next) => {
     console.error(err);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send('Internal Server Error')
 });
 
 app.get("/",(req,res)=>{
@@ -54,5 +54,5 @@ app.get("/",(req,res)=>{
 })
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port}`);
+    console.log(`Server running on port ${port}`)
 });
