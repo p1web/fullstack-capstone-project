@@ -30,7 +30,7 @@ function RegisterPage() {
                     password
                 })
             });
-
+            console.log(response);
             const json = await response.json();
 
             if (json.authtoken) {

@@ -3,13 +3,24 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const pinoLogger = require('./logger');
-
 const connectToDatabase = require('./models/db');
 const {loadData} = require("./util/import-mongo/index");
 
 
 const app = express();
-app.use("*",cors());
+
+app.use(cors());
+app.options('*', cors());
+
+app.options('/api/auth/register', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    return res.sendStatus(200);
+  });
+
+app.use(express.json());
+
 const port = 3060;
 
 // Connect to MongoDB; we just do this one time
@@ -19,7 +30,7 @@ connectToDatabase().then(() => {
 .catch((e) => console.error('Failed to connect to DB', e));
 
 
-app.use(express.json());
+
 
 
 // Route files
