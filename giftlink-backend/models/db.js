@@ -11,7 +11,7 @@ const dbName = "giftdb";
 async function connectToDatabase() {
     if (dbInstance){
         return dbInstance
-    };
+    }
 
     const client = new MongoClient(url, { useUnifiedTopology: true });   
 
@@ -23,7 +23,7 @@ async function connectToDatabase() {
     dbInstance = client.db(dbName);
 
     // Task 3: Return database instance
-     return dbInstance;
+     return dbInstance
 }
 
 module.exports = connectToDatabase;
